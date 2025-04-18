@@ -17,8 +17,8 @@ Proyek ini adalah implementasi server MCP (Model Context Protocol) untuk sistem 
 
 1. Clone repositori ini:
    ```bash
-   git clone https://github.com/namakamu/mcp-tiket-kereta.git
-   cd mcp-tiket-kereta
+   git clone ://github.com/adityaputra11/mcp-kai
+   cd mcp-kai
 
 
 2. Setup MCP Client
