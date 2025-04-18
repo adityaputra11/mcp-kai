@@ -1,6 +1,6 @@
 # MCP Server Tiket KRL KAI
 
-Proyek ini adalah implementasi server MCP (Model Context Protocol) untuk sistem pembelian tiket kereta api yang dapat digunakan oleh LLM (Large Language Model) melalui protokol MCP.
+Proyek ini adalah implementasi server MCP (Model Context Protocol) untuk sistem pengecekan jadwal kereta api KRLyang dapat digunakan oleh LLM (Large Language Model) melalui protokol MCP.
 
 ## ✨ Fitur
 
