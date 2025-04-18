@@ -17,7 +17,7 @@ Proyek ini adalah implementasi server MCP (Model Context Protocol) untuk sistem 
 
 1. Clone repositori ini:
    ```bash
-   git clone ://github.com/adityaputra11/mcp-kai
+   git clone git@github.com:adityaputra11/mcp-kai.git
    cd mcp-kai
 
 
