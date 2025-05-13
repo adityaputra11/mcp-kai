@@ -1,10 +1,10 @@
-import { McpServer, ResourceTemplate } from "@modelcontextprotocol/sdk/server/mcp.js";
+import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
 import axios from "axios";
 import { Lane, ResponseList, Station, Train } from "./type";
 import { v4 as uuidv4 } from 'uuid';
-import QRCode from 'qrcode'
+import * as QRCode from 'qrcode'
 
 //TODO NEED TO MOVE TO ENV
 const BASE_URL = "https://api-partner.krl.co.id/krl-webs/v1";
@@ -74,7 +74,7 @@ server.tool(
     timefrom: z.string().describe("Waktu keberangkatan"),
     timeto: z.string().describe("Waktu tujuan"),
   },
-  async ({ stationid, timefrom, timeto }) => {
+  async ({ stationid, timefrom, timeto }: { stationid: string, timefrom: string, timeto: string }) => {
     try {
       // Ganti URL berikut dengan endpoint API jadwal kereta yang valid
       const response = await axios.get<ResponseList<Train>>(`${BASE_URL}/schedule`, {
@@ -125,7 +125,7 @@ server.tool(
   {
     trainid: z.string().describe("ID kereta"),
   },
-  async ({ trainid }) => {
+  async ({ trainid }: { trainid: string }) => {
     try {
       const response = await axios.get<ResponseList<Lane>>(`${BASE_URL}/schedule-train`, {
         params: {
@@ -170,7 +170,7 @@ server.tool(
     stationTo: z.string().describe("Stasiun tujuan"),
     timeFrom: z.string().describe("Waktu keberangkatan"),
   },
-  async ({ stationFrom, stationTo, timeFrom }) => {
+  async ({ stationFrom, stationTo, timeFrom }: { stationFrom: string, stationTo: string, timeFrom: string }) => {
     //TODO: This only mock the ticket purchase process
     return {
       content: [
@@ -189,7 +189,7 @@ server.tool(
   {
     ticketid: z.string().describe("ID tiket"),
   },
-  async ({ ticketid }) => {
+  async ({ ticketid }: { ticketid: string }) => {
     if (ticketid === TIKETID) {
       return {
         content: [
@@ -216,10 +216,10 @@ server.tool(
 
 
 async function main() {
-  console.log("Starting MCP Server...");
+  // console.log("Starting MCP Server...");
   const transport = new StdioServerTransport();
   await server.connect(transport);
-  console.log("MCP Server is running and ready to accept connections");
+  // console.log("MCP Server is running and ready to accept connections");
 }
 
 main().catch((error) => {

@@ -30,8 +30,7 @@ Proyek ini adalah implementasi server MCP (Model Context Protocol) untuk sistem 
       "command": "npx",
       "args": [
         "-y",
-        "tsx",
-        "/[YourDirectory]/mcp-kai/server.ts"
+         "mcp-kai@latest"
       ]
     }
   }
