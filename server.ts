@@ -215,7 +215,6 @@ server.tool(
 
 
 
-// Jalankan server dengan transport stdio
 async function main() {
   console.log("Starting MCP Server...");
   const transport = new StdioServerTransport();

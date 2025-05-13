@@ -1,15 +1,16 @@
 {
   "name": "mcp-kai",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "tsx watch server.ts",
-    "start": "node dist/server.js",
+    "start": "tsx server.ts",
     "build": "tsc",
-    "client": "tsx client.ts"
+    "publish-all": "npm publish --access public",
+    "link-all": "npm link"
   },
   "keywords": [],
   "author": "",
@@ -29,5 +30,8 @@
     "ts-node": "^10.9.2",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
+  },
+  "bin": {
+    "mcp-kai": "./cli.js"
   }
 }
